@@ -1,0 +1,35 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        boolean valid;
+        String name, pass;
+        do{
+            try {
+                Scanner input = new Scanner(System.in);
+                System.out.println("Please enter your user name");
+                valid = true;
+                name = input.nextLine();
+
+                System.out.println("Please enter your password");
+                pass = input.nextLine();
+
+
+                if (name.equals("CCT") && pass.equals("Dublin")) {
+                    System.out.println("The access is proved");
+                } else {
+                    System.out.println("the access id denied");
+                    valid = false;
+                }
+            }catch(Exception e){
+                System.out.println("The password is invalid");
+                valid = false;
+
+            }
+        }while (!valid);
+    }
+}
