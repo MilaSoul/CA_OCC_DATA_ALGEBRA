@@ -1,0 +1,164 @@
+public class Equation_2 {
+
+   private int[] cosnt = {0, 0, 0};
+   private int[] xyz = {0, 0, 0, 0, 0, 0, 0, 0 ,0};
+
+    public int[] getCosnt() {
+        return cosnt;
+    }
+
+    public void setCosnt(int[] cosnt) {
+        this.cosnt = cosnt;
+    }
+
+    public int[] getXyz() {
+        return xyz;
+    }
+
+    public void setXyz(int[] xyz) {
+        this.xyz = xyz;
+    }
+   
+   
+
+   
+
+
+    public void solutionSplit2() {
+
+       String equation1 = "x-y+z=2";
+        equation1.toLowerCase().trim().replace(" ", "");
+
+        String[] x = equation1.split("x");
+
+        if (x[0].equals("")) {
+            x[0] = x[0] + 1;
+        } else if (x[0].equals("-")|| x[0].equals("+")) {
+
+            x[0] = x[0] + 1;
+        }
+
+        System.out.println(x[0]);
+        xyz[0]=Integer.parseInt(x[0]);
+        
+        
+
+        String[] y = x[1].split("y");
+
+        if (y[0].equals("")) {
+            y[0] = y[0] + 1;
+        } else if (y[0].equals("-")|| y[0].equals("+")) {
+
+            y[0] = y[0] + 1;
+        }
+        //System.out.println(y[0]);
+        xyz[1]=Integer.parseInt(y[0]);
+
+
+        String[] z = y[1].split("z");
+
+        if (z[0].equals("")) {
+            z[0] = z[0] + 1;
+        } else if (z[0].equals("-")|| z[0].equals("+")) {
+
+            z[0] = z[0] + 1;
+        }
+
+        //System.out.println(z[0]);
+        xyz[2]=Integer.parseInt(z[0]);
+
+        
+        
+        String[] cosnt = z[1].split("=");
+
+        this.cosnt[0] = Integer.parseInt(cosnt[1]);
+        System.out.println(this.cosnt[0]);
+        
+
+      
+
+        
+        String equation2 = "2x+3y+5z=11";
+        equation2.toLowerCase().trim().replace(" ", "");
+
+        String[] x2 = equation2.split("x2");
+
+        if (x2[0].equals("")) {
+            x2[0] = x2[0] + 1;
+        } else if (x2[0].equals("-")|| x2[0].equals("+")) {
+
+            x2[0] = x2[0] + 1;
+        }
+
+
+
+        String[] y2 = x2[1].split("y2");
+
+        if (y2[0].equals("")) {
+            y2[0] = y2[0] + 1;
+        } else if (y2[0].equals("-")|| y2[0].equals("+")) {
+
+            y2[0] = y2[0] + 1;
+        }
+     
+
+        String[] z2 = y2[1].split("z2");
+
+        if (z2[0].equals("")) {
+            z2[0] = z2[0] + 1;
+        } else if (z2[0].equals("-")|| z2[0].equals("+")) {
+
+            z2[0] = z2[0] + 1;
+        }
+
+    
+
+        String[] cosnt2 = z2[1].split("=");
+
+     
+
+        
+             String equation3 = "z-5y+6z=29";
+        equation3.toLowerCase().trim().replace(" ", "");
+
+        String[] x3 = equation3.split("x3");
+
+        if (x3[0].equals("")) {
+            x3[0] = x3[0] + 1;
+        } else if (x3[0].equals("-")|| x3[0].equals("+")) {
+
+            x3[0] = x3[0] + 1;
+        }
+
+      
+
+        String[] y3 = x3[1].split("y3");
+
+        if (y3[0].equals("")) {
+            y3[0] = y3[0] + 1;
+        } else if (y3[0].equals("-")|| y3[0].equals("+")) {
+
+            y3[0] = y3[0] + 1;
+        }
+        
+
+        String[] z3 = y3[1].split("z3");
+
+        if (z3[0].equals("")) {
+            z3[0] = z3[0] + 1;
+        } else if (z3[0].equals("-")|| z3[0].equals("+")) {
+
+            z3[0] = z3[0] + 1;
+        }
+
+        
+
+        String[] cosnt3 = z3[1].split("=");
+
+       
+
+
+    
+
+}
+}
