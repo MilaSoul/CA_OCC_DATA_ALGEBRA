@@ -10,14 +10,17 @@ import java.util.Scanner;
  */
 public class Equation_2 {
 
-     private int[] xyz = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    private int[] constant = {0, 0, 0};
-    private int det;
-    private int[] ctranspose = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    private float det1,finalX,finalY,finalZ;
-    private String equation1,equation2,equation3;
+
+     // initialising val for the equation that we will be solving
+    private int[] xyz = {0, 0, 0, 0, 0, 0, 0, 0, 0};  // array
+    private int[] constant = {0, 0, 0};//array
+    private int det; /int
+    private int[] ctranspose = {0, 0, 0, 0, 0, 0, 0, 0, 0};//array
+    private float det1,finalX,finalY,finalZ;//float 
+    private String equation1,equation2,equation3; // string
     
 
+// getters and setters for val that we have 
     public int[] getXyz() {
         return xyz;
     }
@@ -113,40 +116,40 @@ public class Equation_2 {
     
     
     
-
+// method to sove the equation
     public void readingEquations() {
         
-        Scanner s = new Scanner(System.in);
+        Scanner s = new Scanner(System.in); // users input
         
         System.out.println("Please type your first equation :");
          equation1 =s.next();
-        equation1=equation1.toLowerCase().trim().replace(" ", "");
-        String[] x = equation1.split("x");
+        equation1=equation1.toLowerCase().trim().replace(" ", "");// convert users input in lower case and cut out spaces 
+        String[] x = equation1.split("x"); // spliting the equion string and getting only nwmbwer. 
 
-        if (x[0].equals("")) {
+        if (x[0].equals("")) { // if 0 array equales 0 it will give as 1 (as we need 1 from calculation)
             x[0] = x[0] + 1;
         } else if (x[0].equals("-") || x[0].equals("+")) {
 
-            x[0] = x[0] + 1;
+            x[0] = x[0] + 1; // gives as + in any case when we store the val 
         }
 
         //System.out.println(x[0]);
-        this.xyz[0] = Integer.parseInt(x[0]);
+        this.xyz[0] = Integer.parseInt(x[0]); // parsing string into integer 
 
         String[] y = x[1].split("y");
 
-        if (y[0].equals("")) {
+        if (y[0].equals("")) { //if 0 array equales 0 it will give as 1 (as we need 1 from calculation)
             y[0] = y[0] + 1;
         } else if (y[0].equals("-") || y[0].equals("+")) {
 
             y[0] = y[0] + 1;
         }
         //System.out.println(y[0]);
-        this.xyz[1] = Integer.parseInt(y[0]);
+        this.xyz[1] = Integer.parseInt(y[0]);// parsing string into integer 
 
         String[] z = y[1].split("z");
 
-        if (z[0].equals("")) {
+        if (z[0].equals("")) { //if 0 array equales 0 it will give as 1 (as we need 1 from calculation)
             z[0] = z[0] + 1;
         } else if (z[0].equals("-") || z[0].equals("+")) {
 
@@ -154,12 +157,12 @@ public class Equation_2 {
         }
 
         //System.out.println(z[0]);
-        this.xyz[2] = Integer.parseInt(z[0]);
+        this.xyz[2] = Integer.parseInt(z[0]);// parsing string into integer 
 
         String[] cosnt = z[1].split("=");
         //System.out.println(cosnt[1]);
 
-        this.constant[0] = Integer.parseInt(cosnt[1]);
+        this.constant[0] = Integer.parseInt(cosnt[1]);// parsing string into integer 
         
         
         System.out.println("Please type your second equation :");
