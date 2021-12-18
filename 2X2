@@ -12,7 +12,10 @@ import server_interaction.Table_Interaction;
  */
 public class  Equations {
 
-private String[] xy = {"x", "y"};// 
+
+// creating var that we will be needed for the equation
+
+private String[] xy = {"x", "y"}; 
 private int[] var_xy = {0,0,0,0};
 private int[] constant = {0,0};
 private float det;
@@ -26,10 +29,10 @@ Scanner sc;
 
 
     public Equations() throws Exception {
-        this.sc = new Scanner(System.in);
+        this.sc = new Scanner(System.in); //users input
 solutionSplit();
        
-       
+       // getters and seters to manipulate values 
        
       
     }
@@ -113,46 +116,40 @@ solutionSplit();
 
 
  
- public void solutionSplit() throws Exception{
+ public void solutionSplit() throws Exception{ 
  
      
      System.out.println("Please type your first equation, it should follow this model : 2x-3y=10:");
       this.setEq(sc.next().toLowerCase().trim().replace(" ",""));
      //this.setEq("2x-3y=2");
      
-    String[] x = this.getEq().split("x");
+    String[] x = this.getEq().split("x"); //spliting string and get val befor x
 
-    var_xy[0]=Integer.parseInt(x[0]);
+    var_xy[0]=Integer.parseInt(x[0]); //parsing into integer 
     
-    String[] y = x[1].split("y");
+    String[] y = x[1].split("y"); //spliting string and get val before y
     
-    var_xy[1]=Integer.parseInt(y[0]);
+    var_xy[1]=Integer.parseInt(y[0]);  // parsing into integres
   
     
     
-    String[] constant2 = y[1].split("=");
+    String[] constant2 = y[1].split("="); // spliting string and get val of determinant 
     
-    constant[0] = Integer.parseInt(constant2[1]);
+    constant[0] = Integer.parseInt(constant2[1]); //
     
     
-    
-
-
-     
-     
-  
      System.out.println("Please type your second equation, it should follow this model : 2x-3y=10:");
      this.setEq_2(sc.next().toLowerCase().trim().replace(" ",""));
      //this.setEq_2("3x+8y=3");
      
-     String[] x_2 = this.getEq_2().split("x");
+     String[] x_2 = this.getEq_2().split("x"); //spliting string and get val befor x
      var_xy[2] = Integer.parseInt(x_2[0]);
      
-     String[] y_2 = x_2[1].split("y");
-     var_xy[3] = Integer.parseInt(y_2[0]);
+     String[] y_2 = x_2[1].split("y"); //spliting string and get val before y
+     var_xy[3] = Integer.parseInt(y_2[0]);//parsing into integer 
      
-     String[] const_2 = y_2[1].split("=");
-     constant[1]=Integer.parseInt(const_2[1]);
+     String[] const_2 = y_2[1].split("="); // parsing into integres
+     constant[1]=Integer.parseInt(const_2[1]); //parsing into integer 
      
 //     System.out.println(x_2[0]);
 //     System.out.println(x_2[1]);
@@ -172,7 +169,7 @@ solutionSplit();
 //     System.out.println(this.getVar_xy()[3]);
 //     System.out.println(this.getConstant()[1]);
      
-     det();
+     det(); 
      
     
  }
@@ -193,8 +190,8 @@ solutionSplit();
    
      System.out.println("This is the inverse of A:");
      inversA[0] = this.getVar_xy()[0];
-     inversA[1] = (this.getVar_xy()[1] * -1);
-     inversA[2] = (this.getVar_xy()[2] * -1);
+     inversA[1] = (this.getVar_xy()[1] * -1); // converting into negative number
+     inversA[2] = (this.getVar_xy()[2] * -1); // converting into negative number
      inversA[3] = this.getVar_xy()[3];
  
 //    inversA[0] = 1.00f;
@@ -202,13 +199,13 @@ solutionSplit();
 //     inversA[2] = (3f);
 //     inversA[3] = 4f;
 //     
-     System.out.println(Arrays.toString(this.inversA));
+     System.out.println(Arrays.toString(this.inversA)); 
      inverseAxB();
 }
  
  public void inverseAxB() throws Exception{
      System.out.println("This is the solution for Inverse of A x B:");
-     this.axb[0] = (((this.getInversA()[3] * this.getConstant()[0])
+     this.axb[0] = (((this.getInversA()[3] * this.getConstant()[0]) // 
              + (this.getInversA()[1] * this.getConstant()[1])));
      
      this.axb[1] = ((this.getInversA()[2] * this.getConstant()[0] )
